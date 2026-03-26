@@ -46,11 +46,10 @@ destroy:
 	cd $(TF_DIR) && terraform destroy $(TF_VARS)
 
 clean:
-	cd $(TF_DIR) && \
-	rm -rf .terraform && \
-	rm -f .terraform.lock.hcl && \
-	rm -f terraform.tfstate* && \
-	rm -f .tfplan
+	find . -type d -name .terraform -exec rm -rf {} + 2>/dev/null || true
+	find . -name .terraform.lock.hcl -delete 2>/dev/null || true
+	find . -name "terraform.tfstate*" -delete 2>/dev/null || true
+	find . -name .tfplan -delete 2>/dev/null || true
 
 
 # Run a complete validation and plan cycle
