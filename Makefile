@@ -1,7 +1,7 @@
 .PHONY: help init validate plan apply destroy fmt lint clean import
 
 TF_DIR := terraform
-TF_VARS := -var-file=../members.tfvars -var-file=../teams.tfvars
+TF_VARS := 
 
 help:
 	@echo "GitHub Organization Access as Code - Terraform Commands"

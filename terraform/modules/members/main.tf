@@ -6,19 +6,13 @@ terraform {
   }
 }
 
-# Manages organization members
-resource "github_membership" "this" {
-  for_each = var.members
+resource "github_membership" "all" {
+  for_each = {
+    for member in csvdecode(file("${path.root}/../members.csv")) :
+    member.username => member
+  }
 
-  username = each.key
-  role     = each.value.role
-}
-
-# Manages team memberships
-resource "github_team_membership" "this" {
-  for_each = var.team_memberships
-
-  team_id  = each.value.team_id
   username = each.value.username
   role     = each.value.role
+
 }

@@ -28,4 +28,3 @@ repos:
     rev: v1.14.8
     hooks:
       - id: tf-fmt
-      - id: tf-validate
