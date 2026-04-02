@@ -24,7 +24,8 @@
 			"extensions": [
 				"HashiCorp.terraform",
 				"alefragnani.Bookmarks",
-				"fabiospampinato.vscode-todo-plus"
+				"fabiospampinato.vscode-todo-plus",
+				"mechatroner.rainbow-csv"
 			]
 		}
 	}
