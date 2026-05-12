@@ -14,7 +14,7 @@ locals {
   # Create temp object that has team ID and CSV contents
   team_members_temp = flatten([
     for team, members in local.team_members_files : [
-      for tn, t in github_team.all : {
+      for tn, t in module.teams.teams : {
         name    = t.name
         id      = t.id
         slug    = t.slug
