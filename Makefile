@@ -39,8 +39,14 @@ lint: validate fmt
 plan:
 	cd $(TF_DIR) && terraform plan $(TF_VARS)
 
+plan-target-team:
+	cd $(TF_DIR) && terraform plan -target=module.teams $(TF_VARS)
+
 apply:
 	cd $(TF_DIR) && terraform apply $(TF_VARS)
+
+apply-target-team:
+	cd $(TF_DIR) && terraform apply -target=module.teams $(TF_VARS)
 
 destroy:
 	cd $(TF_DIR) && terraform destroy $(TF_VARS)
