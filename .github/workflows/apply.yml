@@ -1,0 +1,29 @@
+name: Terraform Apply
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Terraform
+        uses: hashicorp/setup-terraform@v3
+
+      - name: Initialize Terraform
+        run: terraform init
+        working-directory: terraform
+
+      - name: Apply teams module
+        run: terraform apply -target=module.teams -auto-approve -var="github_owner=${{ secrets.GITHUB_OWNER }}" -var="github_token=${{ secrets.GITHUB_TOKEN }}"
+        working-directory: terraform
+
+      - name: Apply remaining resources
+        run: terraform apply -auto-approve -var="github_owner=${{ secrets.GITHUB_OWNER }}" -var="github_token=${{ secrets.GITHUB_TOKEN }}"
+        working-directory: terraform
