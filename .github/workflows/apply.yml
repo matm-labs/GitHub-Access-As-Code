@@ -21,9 +21,9 @@ jobs:
         working-directory: terraform
 
       - name: Apply teams module
-        run: terraform apply -target=module.teams -auto-approve -var="github_owner=${{ secrets.GITHUB_OWNER }}" -var="github_token=${{ secrets.GITHUB_TOKEN }}"
+        run: terraform apply -target=module.teams -auto-approve -var="github_owner=${{ secrets.OWNER }}" -var="github_token=${{ secrets.ORG_TOKEN }}"
         working-directory: terraform
 
       - name: Apply remaining resources
-        run: terraform apply -auto-approve -var="github_owner=${{ secrets.GITHUB_OWNER }}" -var="github_token=${{ secrets.GITHUB_TOKEN }}"
+        run: terraform apply -auto-approve -var="github_owner=${{ secrets.OWNER }}" -var="github_token=${{ secrets.ORG_TOKEN }}"
         working-directory: terraform
