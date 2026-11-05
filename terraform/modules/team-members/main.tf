@@ -1,17 +1,10 @@
-terraform {
-  required_providers {
-    github = {
-      source = "integrations/github"
-    }
-  }
-}
-
-resource "github_team_membership" "all" {
-  count = length(var.team_members)
-  username = var.team_members[count.index].username
-  role     = var.team_members[count.index].role
-  team_id  = var.team_members[count.index].team_id
-}
+# terraform {
+#   required_providers {
+#     github = {
+#       source = "integrations/github"
+#     }
+#   }
+# }
 
 # resource "github_team_membership" "all" {
 #   for_each = {
