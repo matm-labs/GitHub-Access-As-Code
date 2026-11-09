@@ -4,15 +4,15 @@ module "teams" {
   github_owner = var.github_owner
 }
 
-# module "members" {
-#   source = "./modules/members"
+module "members" {
+  source = "./modules/members"
 
-#   github_owner = var.github_owner
-# }
+  github_owner = var.github_owner
+}
 
-# module "team-members" {
-#   source = "./modules/team-members"
+module "team-members" {
+  source = "./modules/team-members"
 
-#   github_owner = var.github_owner
-#   team_members = local.team_members
-# }
+  github_owner = var.github_owner
+  team_members = local.team_members
+}
