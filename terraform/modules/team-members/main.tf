@@ -8,7 +8,7 @@ terraform {
 
 resource "github_team_membership" "all" {
   for_each = {
-    for team in local.team_members :
+    for user in local.team_members :
     user.username => user
   }
   username = each.value.username
