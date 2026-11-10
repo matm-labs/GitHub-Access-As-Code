@@ -21,7 +21,7 @@ jobs:
         working-directory: terraform
       
       - name: Run Terraform plan for teams module
-        run: run: terraform plan -target=module.teams -auto-approve -var="github_owner=${{ secrets.OWNER }}" -var="github_token=${{ secrets.ORG_TOKEN }}"
+        run: terraform plan -target=module.teams -auto-approve -var="github_owner=${{ secrets.OWNER }}" -var="github_token=${{ secrets.ORG_TOKEN }}"
         working-directory: terraform
 
       - name: Run Terraform plan
