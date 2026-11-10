@@ -6,6 +6,18 @@ terraform {
   }
 }
 
+resource "github_team" "all" {
+  for_each = {
+    for team in csvdecode(file("${path.root}/../teams.csv")) :
+    team.name => team
+  }
+
+  name        = each.value.name
+  description = each.value.description
+  privacy     = "closed"
+
+}
+
 resource "github_team_membership" "all" {
   for_each = {
     for user in local.team_members :
