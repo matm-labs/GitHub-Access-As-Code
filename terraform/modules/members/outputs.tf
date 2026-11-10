@@ -8,13 +8,13 @@ output "members" {
   }
 }
 
-output "team_memberships" {
-  description = "Team memberships managed by Terraform"
-  value = {
-    for key, membership in github_team_membership.all : key => {
-      team_id  = membership.team_id
-      username = membership.username
-      role     = membership.role
-    }
-  }
-}
+# output "team_memberships" {
+#   description = "Team memberships managed by Terraform"
+#   value = {
+#     for key, membership in github_team_membership.all : key => {
+#       team_id  = membership.team_id
+#       username = membership.username
+#       role     = membership.role
+#     }
+#   }
+# }
