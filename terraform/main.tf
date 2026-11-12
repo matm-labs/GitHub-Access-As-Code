@@ -15,4 +15,6 @@ module "team-members" {
 
   github_owner = var.github_owner
   team_members = local.team_members
+
+  depends_on = [ module.teams ]
 }
