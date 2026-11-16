@@ -13,5 +13,5 @@ resource "github_team_membership" "all" {
   }
   username = each.value.username
   role     = each.value.role
-  team_id  = var.team_members[user.team].id
+  team_id  = var.team_members[each.value.team].id
 }
