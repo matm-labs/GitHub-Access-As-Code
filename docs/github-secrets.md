@@ -14,7 +14,7 @@ To run the Terraform workflows automatically via GitHub Actions, you need to con
 1. Go to the repository settings
 2. Navigate to **Secrets and variables** → **Actions**
 3. Click **New repository secret**
-4. Name: `GITHUB_OWNER`
+4. Name: `OWNER`
 5. Value: Enter the GitHub organisation name
 6. Click **Add secret**
 
@@ -33,7 +33,7 @@ To run the Terraform workflows automatically via GitHub Actions, you need to con
 4. Go to your repository settings
 5. Navigate to **Secrets and variables** → **Actions**
 6. Click **New repository secret**
-7. Name: `GITHUB_TOKEN`
+7. Name: `  ORG_TOKEN`
 8. Value: Paste your personal access token
 9. Click **Add secret**
 

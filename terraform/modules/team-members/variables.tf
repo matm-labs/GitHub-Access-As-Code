@@ -5,10 +5,11 @@ variable "github_owner" {
 
 variable "team_members" {
   description = "List of team members to add to teams"
-  type = list(object({
-    name     = string
-    role     = string
-    team_id  = string
-    username = string
+  type = map(object({
+      id          = string
+      name        = string
+      slug        = string
+      description = string
+      privacy     = string
   }))
 }
