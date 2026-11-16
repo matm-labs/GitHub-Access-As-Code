@@ -6,8 +6,6 @@ terraform {
   }
 }
 
-
-
 resource "github_team_membership" "all" {
   for_each = {
     for user in csvdecode(file("${path.root}/../team-members.csv")) :
