@@ -6,12 +6,14 @@ terraform {
   }
 }
 
+
+
 resource "github_team_membership" "all" {
   for_each = {
-    for user in var.team_members :
+    for user in csvdecode(file("${path.root}/../team-members.csv")) :
     user.username => user
   }
   username = each.value.username
   role     = each.value.role
-  team_id  = each.value.team_id
+  team_id  = var.team_members[user.team].id
 }
