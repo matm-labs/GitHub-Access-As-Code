@@ -1,6 +1,6 @@
 # Adding members to teams
 
-To add members to a team in the organisation, create a new CSV file in the `team-members/` folder with a filename that matches the team name from `teams.csv`.
+To add members to a team in the organisation edit the `team-members.csv` file in the root directory.
 
 ## CSV Format
 
@@ -8,17 +8,18 @@ The team member CSV file has two columns:
 
 - **username** — The GitHub username of the member to add to the team
 - **role** — The role for the member in the team, either `member` or `maintainer`
+- **team** — The team name of the team the member will be joining
 
 ## Adding members to a team
 
-1. Create a new CSV file in the `team-members/` folder with the team name. For example, if your team is named `platform-team`, create `team-members/platform-team.csv`
-2. Add the usernames and roles of members to add to the team:
+1. Open `team-members.csv`
+2. Add a new row with the member's information:
 
 ```csv
-username,role
-developer1,member
-developer2,member
-project-lead,maintainer
+username,role, team
+developer1,member,Team Name
+developer2,member,Team Name
+project-lead,maintainer,Team Name
 ```
 
 3. Save the file
